@@ -1,11 +1,11 @@
 # Text-Classification
 Task 6 of the assignment given by Kaiburr
 
-Task 6: Perform a Text Classification on the consumer complaint dataset into the following categories: 0) Credit reporting, repair, or other
-
-    Debt collection
-    Consumer Loan
-    Mortgage
+Task 6: Perform a Text Classification on the consumer complaint dataset into the following categories: 
+0) Credit reporting, repair, or other
+1) Debt collection
+2) Consumer Loan
+3) Mortgage
 
 To run the code:
 
