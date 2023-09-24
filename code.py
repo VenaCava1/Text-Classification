@@ -126,13 +126,11 @@ rf_f1 = f1_score(y_test, rf_predictions, average='weighted')
 rf_precision = precision_score(y_test, rf_predictions, average='weighted')
 rf_recall = recall_score(y_test, rf_predictions, average='weighted')
 tn, fp, fn, tp = confusion_matrix(y_test, rf_predictions).ravel()
-rf_specificity = tn / (tn + fp)
 
 print("Random Forest Accuracy:", rf_accuracy)
 print("Random Forest F1-Score:", rf_f1)
 print("Random Forest Precision:", rf_precision)
 print("Random Forest Recall:", rf_recall)
-print("Random Forest Specificity:", rf_specificity)
 plot_confusion_matrix(y_test, rf_predictions, classes=df['Product'].unique(), title="Random Forest Confusion Matrix")
 
 # Support Vector Machine (SVM)
@@ -144,13 +142,11 @@ svm_f1 = f1_score(y_test, svm_predictions, average='weighted')
 svm_precision = precision_score(y_test, svm_predictions, average='weighted')
 svm_recall = recall_score(y_test, svm_predictions, average='weighted')
 tn, fp, fn, tp = confusion_matrix(y_test, svm_predictions).ravel()
-svm_specificity = tn / (tn + fp)
 
 print("SVM Accuracy:", svm_accuracy)
 print("SVM F1-Score:", svm_f1)
 print("SVM Precision:", svm_precision)
 print("SVM Recall:", svm_recall)
-print("SVM Specificity:", svm_specificity)
 plot_confusion_matrix(y_test, svm_predictions, classes=df['Product'].unique(), title="SVM Confusion Matrix")
 
 # Logistic Regression
@@ -162,13 +158,11 @@ logistic_f1 = f1_score(y_test, logistic_predictions, average='weighted')
 logistic_precision = precision_score(y_test, logistic_predictions, average='weighted')
 logistic_recall = recall_score(y_test, logistic_predictions, average='weighted')
 tn, fp, fn, tp = confusion_matrix(y_test, logistic_predictions).ravel()
-logistic_specificity = tn / (tn + fp)
 
 print("Logistic Regression Accuracy:", logistic_accuracy)
 print("Logistic Regression F1-Score:", logistic_f1)
 print("Logistic Regression Precision:", logistic_precision)
 print("Logistic Regression Recall:", logistic_recall)
-print("Logistic Regression Specificity:", logistic_specificity)
 plot_confusion_matrix(y_test, logistic_predictions, classes=df['Product'].unique(), title="Logistic Regression Confusion Matrix")
 
 #Step 4: Final comparison
@@ -178,7 +172,6 @@ metrics_df = pd.DataFrame({
     'Accuracy': [svm_accuracy, rf_accuracy, logistic_accuracy],
     'F1-Score': [svm_f1, rf_f1, logistic_f1],
     'Precision': [svm_precision, rf_precision, logistic_precision],
-    'Recall': [svm_recall, rf_recall, logistic_recall],
-    'Specificity': [svm_specificity, rf_specificity, logistic_specificity]
+    'Recall': [svm_recall, rf_recall, logistic_recall]
 })
 print(metrics_df)
